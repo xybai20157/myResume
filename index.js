@@ -10,32 +10,10 @@ if (winW / winH > descW / descH) {
 }
 
 
-var oSpan = document.querySelector(".progress");
-var loadBg = document.querySelector(".loadBg");
-var loading = document.querySelector(".loading");
+var music=document.querySelector("#music");
 var list = document.querySelector(".list");
 var oLis = list.querySelectorAll("li");
 (function () {
-    var ary = ['1.png', '1-1.png', '2.png', 'bot.png', 'list-c.gif', 'normalmusic.png', 'pic.png', 'skill.png', 'title.png'];
-
-    function load() {
-        for (var i = 0; i < ary.length; i++) {
-            var cur = ary[i];
-            var oImg = new Image();
-            oImg.index = i+8 ;
-            oImg.src = "images/" + cur;
-            oImg.onload = function () {
-                oSpan.style.width = (this.index / ary.length) * 100 + "%";
-            }
-        }
-    }
-    load();
-
-    oSpan.addEventListener("webkitTransitionEnd", function () {
-        loadBg.style.height = 0;
-        loading.remove();
-    });
-
     [].forEach.call(oLis, function () {
         var cur = arguments[0];
         cur.index = arguments[1];
@@ -73,7 +51,7 @@ var oLis = list.querySelectorAll("li");
         oLis[this.prevIndex].className = "zIndex";
         oLis[this.prevIndex].style.display = "block";
         oLis[this.prevIndex].style.webkitTransform = "translate(0," + pos + "px)";
-        oLis[cur].style.webkitTransform = "scale("+(1-Math.abs(changePos / winH /2))+ ")" + "translate(0," + changePos + "px)";
+       /* oLis[cur].style.webkitTransform = "scale("+(1-Math.abs(changePos / winH /2))+ ")" + "translate(0," + changePos + "px)";*/
     }
 
     function end(e) {
@@ -84,6 +62,4 @@ var oLis = list.querySelectorAll("li");
             this.firstElementChild.id="next"+(this.index+1);
         },false)
     }
-
-
 })();

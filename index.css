@@ -24,32 +24,46 @@ body {
     position: absolute;
     width: 60px;
     height: 60px;
-    right: 7%;
-    top: 3%;
+    right: 10%;
+    top: 4%;
     z-index: 200;
     background: url("images/normalmusic.png") no-repeat;
+    background-size: contain;
+    -webkit-animation: sound 1s linear infinite;
     animation: sound 1s linear infinite;
+}
+
+@-webkit-keyframes sound {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 
 .toTop {
     position: absolute;
     left: 50%;
-    bottom: 4%;
+    bottom: 5%;
     z-index: 300;
     margin-left: -30px;
     width: 40px;
     height: 40px;
-    transform: rotate(90deg);
     opacity: 0.5;
+    -webkit-transform: rotate(90deg);
+    -webkit-animation: tran 1s ease-out infinite;
+    transform: rotate(90deg);
     animation: tran 1s ease-out infinite;
+
 }
 
 @-webkit-keyframes tran {
     0%, 100% {
+        -webkit-transform: translate(0, 0) rotate(90deg);
         transform: translate(0, 0) rotate(90deg);
         opacity: 0.1;
     }
     50% {
+        -webkit-transform: translate(0, 50px) rotate(90deg);
         transform: translate(0, 50px) rotate(90deg);
         opacity: 0.5;
     }
@@ -64,124 +78,20 @@ body {
 }
 
 .toTop span:nth-child(1) {
+    -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
 
 .toTop span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
 @-webkit-keyframes sound {
     100% {
+        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
-}
-
-.loadBg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 15;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    transition: 1s ease-out;
-}
-
-.loadBg .loading {
-    width: 70%;
-    margin: 65% 15% 0 15%;
-    height: 30px;
-    border-radius: 30px;
-    background: #FFFFFF;
-    color: #00A5FF;
-    overflow: hidden;
-}
-
-.loadBg .loading span {
-    display: block;
-    width: 0;
-    height: 30px;
-    background: -webkit-linear-gradient(45deg, #37C7D4 25%, #06bdcd 50%, #37C7D4 75%, #06bdcd 100%) repeat-x;
-    background-size: 40px 40px;
-    -webkit-transition: 1s;
-}
-
-.about {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-}
-
-.about .title {
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    width: 314px;
-    height: 114px;
-    margin-left: -157px;
-    background: url("images/title.png") no-repeat;
-    background-size: 100%;
-    opacity: 0;
-    -webkit-transition: 1s;
-    -webkit-transform: translate(0, -100px);
-}
-
-.about .pic {
-    position: absolute;
-    left: 50%;
-    top: 27%;
-    width: 263px;
-    height: 263px;
-    margin-left: -131px;
-    background: url("images/pic.png") no-repeat;
-    background-size: 100%;
-}
-
-.about .content {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    width: 74%;
-    height: 15%;
-    padding: 2%;
-    margin-left: -40%;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 3px;
-    box-shadow: 0 0 7px rgba(225, 225, 225, 0.7);
-    opacity: 0;
-    -webkit-transition: 1s;
-}
-
-.about .content p {
-    font-size: 28px;
-    line-height: 46px;
-    padding-left: 5%;
-    color: #fff;
-    -webkit-transition: 1s;
-}
-
-.about .content p:nth-child(2n) {
-    -webkit-transform: translate(-450px, 0);
-}
-
-.about .content p:nth-child(2n+1) {
-    -webkit-transform: translate(450px, 0);
-}
-
-.about .bot {
-    position: absolute;
-    left: 50%;
-    bottom: 14%;
-    width: 331px;
-    height: 96px;
-    margin-left: -165px;
-    background: url("images/bot.png") no-repeat;
-    background-size: 100%;
 }
 
 .list {
@@ -206,8 +116,7 @@ body {
 }
 
 .list li:nth-child(1) {
-    background: url("images/2.png") no-repeat;
-    background-size: cover;
+    background: #000;
 }
 
 .list li:nth-child(2) {
@@ -216,21 +125,93 @@ body {
 }
 
 .list li:nth-child(3) {
-    background:url("images/3.jpg") no-repeat;
+    background: url("images/3.jpg") no-repeat;
     background-size: cover;
 }
 
-#next1 .about .title {
-    opacity: 1;
-    -webkit-transform: translate(0, 0);
+.list li:nth-child(4) {
+    background: url("images/bg4.jpg") no-repeat;
 }
 
-#next1 .content {
-    opacity: 1;
+.next1 .bg-round {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    margin-left: -210px;
+    width: 420px;
+    height: 420px;
+    background: url("images/bg_round.png") no-repeat;
+    background-size: cover;
+    -webkit-animation: bg-round 1.5s linear infinite;
+    animation: bg-round 1.5s linear infinite;
 }
 
-#next1 p {
-    -webkit-transform: translate(0, 0);
+@-webkit-keyframes bg-round {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.next1 {
+    width: 100%;
+    height: 100%;
+}
+
+.next1 .bg-top {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -190px;
+    width: 300px;;
+    height: 300px;
+    border-radius: 50%;
+    background: url("images/photo.png") no-repeat;
+    background-size: cover
+}
+
+.next1 .title {
+    width: 78%;
+    margin: 12%;
+}
+
+.next1 .title span {
+    display: block;
+    width: 18%;
+    height: 90px;
+    margin: 0 3%;
+    float: left;
+    background-size: cover;
+    -webkit-transition: 0.1s linear;
+    transition: 0.1s linear;;
+}
+
+.next1 .title span:nth-child(1) {
+    background: url("images/ge.png") no-repeat;
+}
+
+.next1 .title span:nth-child(2) {
+    background: url("images/ren.png") no-repeat;
+}
+
+.next1 .title span:nth-child(3) {
+    background: url("images/jian.png") no-repeat;
+}
+
+.next1 .title span:nth-child(4) {
+    background: url("images/li.png") no-repeat;
+}
+
+.next1 .bot {
+    position: absolute;
+    bottom: 13%;
+    left: 50%;
+    margin-left: -30%;
+    width: 60%;
+    height: 11%;
+    background: url("images/mx.png") no-repeat;
+    background-size: contain;
 }
 
 .next2 .title {
@@ -252,24 +233,35 @@ body {
     position: absolute;
     left: 50%;
     top: 58%;
-    margin-top: -160px;
-    margin-left: -160px;
-    width: 320px;
-    height: 320px;
-    background: url("images/list-c.gif") 46% no-repeat;
-    background-size: 130%;
+    margin-top: -200px;
+    margin-left: -200px;
+    width: 400px;
+    height: 400px;
+    background: url("images/scbg.png") no-repeat;
+    background-size: 100%;
+    -webkit-transition: 1s;
+    transition: 1s;
+    -webkit-transform: scale(0);
+    transform: scale(0);
 }
 
 .next2 p {
     position: absolute;
-    left: 50%;
-    top: 58%;
+    left: 40%;
+    top: 52%;
     width: 110px;
     height: 100px;
     border-radius: 50%;
     padding: 30px 10px 0;
-    -webkit-transition: 1s;
     opacity: 0;
+    border: 8px solid rgba(255, 255, 255, 0.5);
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+#next2 .center {
+    -webkit-transform: scale(1);
+    transform: scale(1);
 }
 
 #next2 p:nth-of-type(1) {
@@ -277,12 +269,13 @@ body {
     top: 30%;
     background: #0044DD;
     opacity: 1;
-    -webkit-transform: rotate(720deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
 }
 
 #next2 p {
     opacity: 1;
-    -webkit-transform: rotate(720deg);
+    -webkit-transform: rotate(360deg);
     -webkit-transition: 1s ease-in-out;
 }
 
@@ -316,11 +309,6 @@ body {
     background: #37C7D4;
 }
 
-.next3 ul {
-    margin-top: 200px;
-    float: left;
-}
-
 .next3 li {
     width: 200px;
     height: 300px;
@@ -332,15 +320,17 @@ body {
     line-height: 48px;
     font-weight: bold;
 }
-.next3 div:nth-child(1){
+
+.next3 div:nth-child(1) {
     position: absolute;
     width: 100%;
-    margin-top:-22%;
-    font-size: 36px ;
+    margin-top: -22%;
+    font-size: 36px;
     line-height: 36px;
     text-align: center;
     color: #8fc120;
 }
+
 .next3 p {
     margin: 4% 6% 4% 28%;
     color: #fff;
@@ -378,58 +368,133 @@ body {
     -webkit-transform: rotate(45deg);
 }
 
-.next3 p:nth-child(2){
+.next3 p:nth-child(2) {
     color: #24b9c6;
 }
+
 .next3 p:nth-child(2) span {
     background: #24b9c6;
 }
 
-#next3 p span em{
+#next3 p span em {
     display: block;
     -webkit-transform: rotate(-45deg);
     border-radius: 2px;
 }
 
-.next3 p:nth-child(3){
+.next3 p:nth-child(3) {
     color: #f44e62;
 }
+
 .next3 p:nth-child(3) span {
     background: #f44e62;
 }
 
-.next3 p:nth-child(4){
+.next3 p:nth-child(4) {
     color: #4d73ab;
 }
+
 .next3 p:nth-child(4) span {
     background: #4d73ab;
 }
-.next3 p:nth-child(5){
+
+.next3 p:nth-child(5) {
     color: #ff5a00;
 }
+
 .next3 p:nth-child(5) span {
     background: #ff5a00;
 }
 
-.next3 p:nth-child(6){
+.next3 p:nth-child(6) {
     color: #7b4dab;
 }
+
 .next3 p:nth-child(6) span {
     background: #7b4dab;
 }
-.next3 p:nth-child(7){
+
+.next3 p:nth-child(7) {
     color: #ab4da3;
 }
+
 .next3 p:nth-child(7) span {
     background: #ab4da3;
 }
 
+.next4 {
+    width: 100%;
+    height: 100%;
+}
 
+.next4 p:nth-child(1) {
+    width: 60%;
+    height: 20%;;
+    margin-left: 20%;
+    margin-top: 20%;
+    background: url("images/kh.png") no-repeat;
+    background-size: contain;
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+}
 
+#next4 p:nth-child(1) {
+    -webkit-animation: kh-animation 1s ease-in;
+    animation: kh-animation 0.5s linear 0s;
+    transition: 1s;
+    opacity: 1;
+}
 
+@-webkit-keyframes kh-animation {
+    0% {
+        -webkit-transform: translate(-150%, -150%) rotate(90deg);
+        transform: translate(-150%, -150%) rotate(90deg);
+    }
+    50% {
+        -webkit-transform: translate(-70%, -70%) rotate(180deg);
+        transform: translate(-70%, -70%) rotate(180deg);
+    }
+    100% {
+        -webkit-transform: translate(0, 0) rotate(360deg);
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
 
+.next4 p:nth-child(2) {
+    width: 280px;
+    height: 280px;
+    margin: 10% auto 0;
+    background: url("images/sys.png") no-repeat;
+    background-size: contain;
+}
 
+.next4 p:nth-child(3) {
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    margin-top: 4%;
+    opacity: 0;
+    transition: 2s;
+}
 
+#next4 p:nth-child(3) {
+    opacity: 1;
+}
+
+.next4 .xn {
+    margin-top: 20%;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    opacity: 0;
+}
+
+#next4 .xn {
+    opacity: 0.5;
+    margin-top: 10px;
+    -webkit-transition: 3s;
+    transition: 3s;
+}
 
 
 
