@@ -34,10 +34,11 @@ li {
     z-index: 200;
     background: url("images/normalmusic.png") no-repeat;
     background-size: contain;
+}
+.move{
     -webkit-animation: sound 1s linear infinite;
     animation: sound 1s linear infinite;
 }
-
 @-webkit-keyframes sound {
     100% {
         -webkit-transform: rotate(360deg);

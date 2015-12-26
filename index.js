@@ -11,9 +11,24 @@ if (winW / winH > descW / descH) {
 
 
 var music=document.querySelector("#music");
+var sound=document.querySelector(".sound");
 var list = document.querySelector(".list");
 var oLis = list.querySelectorAll("li");
 (function () {
+
+    sound.addEventListener("click", function (e) {
+        if (music.paused) {
+            music.play();
+            sound.className="sound move";
+            return;
+        }
+        music.pause();
+        sound.className="sound";
+    }, false);
+
+
+
+
     [].forEach.call(oLis, function () {
         var cur = arguments[0];
         cur.index = arguments[1];
@@ -60,6 +75,7 @@ var oLis = list.querySelectorAll("li");
         oLis[this.prevIndex].addEventListener("webkitTransitionEnd",function(){
             this.style.webkitTransition = "";
             this.firstElementChild.id="next"+(this.index+1);
-        },false)
+        },false) ;
+
     }
 })();
